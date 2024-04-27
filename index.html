@@ -1,124 +1,119 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7FN7LEVWXD');
-    </script>
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon">
-    <link rel="stylesheet" href="storage/css/index6.css">
-    <title>Home | Seraph</title>
+          gtag('config', 'G-7FN7LEVWXD');
+        </script>
 
-    <meta name="description" content="seraph; an open source unblocked games website hosting 250+ games with downloadable support, a clean and centralised user interface and no iframe embedding">
-    <meta property="og:site_name" content="seraph">
-    <meta property="og:title" content="seraph">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="seraph; an open source unblocked games website hosting 250+ games with downloadable support, a clean and centralised user interface and no iframe embedding">
-</head>
-<body>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon">
+        <link rel="stylesheet" href="storage/css/index6.css">
+        <title>Home | Seraph</title>
 
-<div class="content-side">
-    <h1 class="typewriter"><span id="cursor"></span></h1>
-    <h2>version 8.2 / release build</h2>
-    <br>
+        <meta name="description" content="seraph; an open source unblocked games website hosting 250+ games with downloadable support, a clean and centralised user interface and no iframe embedding">
+        <meta property="og:site_name" content="seraph">
+        <meta property="og:title" content="seraph">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="seraph; an open source unblocked games website hosting 250+ games with downloadable support, a clean and centralised user interface and no iframe embedding">
+  </head>
+  <body>
+    
+  
+      <div class="content-side">
+          <h1 class="typewriter"><span id="cursor"></span></h1>
+          <h2>version 8.2 / release build</h2>
+          <br>
 
-    <div class="button-container">
-        <div class="gamesbutton" onclick="openInBlank('games/index.html');">
-            <img src="images/other/controller.png">
-            <div class="button-text">
-                <p>games</p>
-            </div>
-        </div>
+          <div class="button-container">
+              <div class="gamesbutton" onclick="window.location='games/index.html';">
+                  <img src="images/other/controller.png">
+                  <div class="button-text">
+                      <p>games</p>
+                  </div>
+              </div>
+          
+              <div class="gamesbutton" onclick="window.location='apps/index.html';">
+                  <a href="apps/index.html"><img src="images/other/apps.png"></a>
+                  <div class="button-text">
+                      <p>apps</p>
+                  </div>
+              </div>
+          </div>
+          
 
-        <div class="gamesbutton" onclick="window.location='apps/index.html';">
-            <a href="apps/index.html"><img src="images/other/apps.png"></a>
-            <div class="button-text">
-                <p>apps</p>
-            </div>
-        </div>
-    </div>
+          <br>
 
+          <p class="linkp"><a href="settings.html">settings</a> • <a href="updatelog.html">updates</a> • <a id="openBlankLink">open blank</a></p>          
+      </div>
 
-    <br>
+      <script>
+        const text = "khan academy 💀";
+        const typingDelay = 500; 
+        const initialDelay = 100; 
+        const cursor = document.getElementById("cursor");
+        const h1 = document.querySelector(".typewriter");
 
-    <p class="linkp"><a href="settings.html">settings</a> • <a href="updatelog.html">updates</a> • <a href="host.html">rehost</a> • <a id="openBlankLink">open blank</a></p>
-</div>
-
-<script>
-    const text = "seraph";
-    const typingDelay = 500;
-    const initialDelay = 100;
-    const cursor = document.getElementById("cursor");
-    const h1 = document.querySelector(".typewriter");
-
-    function type() {
-        setTimeout(() => {
-            for (let i = 0; i < text.length; i++) {
+        function type() {
+            setTimeout(() => {
+                for (let i = 0; i < text.length; i++) {
                 setTimeout(() => {
                     h1.textContent += text[i];
                     if (i === text.length - 1) {
-                        cursor.style.display = "none";
+                    cursor.style.display = "none"; 
                     }
                 }, i * typingDelay);
-            }
-        }, initialDelay);
-    }
+                }
+            }, initialDelay);
+        }
 
-    type();
-</script>
+        type();
+      </script>
 
-<script>
-    function openInBlank(url) {
-        window.open(url, '_blank');
-    }
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var openBlankLink = document.getElementById('openBlankLink');
+        
+            openBlankLink.addEventListener('click', function(event) {
+                event.preventDefault();
+        
+                var newTab = window.open('about:blank', '_blank');
+        
+                if (newTab) {
+                    var newTabBody = newTab.document.body;
+                    newTabBody.style.padding = '0';
+                    newTabBody.style.margin = '0';
+                    newTabBody.style.border = 'hidden';
+        
+                    var iframe = document.createElement('iframe');
+                    iframe.src = window.location.href;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.border = 'hidden';
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var openBlankLink = document.getElementById('openBlankLink');
-
-        openBlankLink.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            var newTab = window.open('about:blank', '_blank');
-
-            if (newTab) {
-                var newTabBody = newTab.document.body;
-                newTabBody.style.padding = '0';
-                newTabBody.style.margin = '0';
-                newTabBody.style.border = 'hidden';
-
-                var iframe = document.createElement('iframe');
-                iframe.src = window.location.href;
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.border = 'hidden';
-
-                iframe.onload = function() {
-                    var links = iframe.contentDocument.querySelectorAll('a[target="_blank"]');
-                    links.forEach(function(link) {
-                        link.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            iframe.contentWindow.location.href = link.href;
+                    iframe.onload = function() {
+                        var links = iframe.contentDocument.querySelectorAll('a[target="_blank"]');
+                        links.forEach(function(link) {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                iframe.contentWindow.location.href = link.href;
+                            });
                         });
-                    });
-                };
-
-                newTab.document.body.appendChild(iframe);
-            } else {
-                alert("couldn't manage to open a new tab :(");
-            }
+                    };
+        
+                    newTab.document.body.appendChild(iframe);
+                } else {
+                    alert("couldn't manage to open a new tab :(");
+                }
+            });
         });
-    });
-</script>
+        </script>    
 
-<script src="storage/js/cloak.js"></script>
-<script src="storage/js/theme.js"></script>
-</body>
+      <script src="storage/js/cloak.js"></script>
+      <script src="storage/js/theme.js"></script>
+  </body>
 </html>
